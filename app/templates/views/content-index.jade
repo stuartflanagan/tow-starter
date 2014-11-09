@@ -1,0 +1,9 @@
+.grid(ng-controller='TowEntityIndexCtrl', ng-init="init(9)")
+  h2.page-title Content
+  md-list
+    md-item(tow-entity-item, ng-repeat='item in items', item='item') Loading...
+  .container
+    .row
+      .col-sm-9
+        .dj-loading-spinner(tow-loading-spinner, data-watch="isLoading")
+        button(ng-show='moreToLoad', ng-click='loadMore($event)') Load more...

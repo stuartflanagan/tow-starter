@@ -1,0 +1,7 @@
+div(ng-if="item")
+  h1 {{item.title}}
+  figure
+    img(ng-src='{{item.image.url}}', alt='{{item.image.title}}', width='100%')
+    figcaption {{item.image.caption}}
+  p
+    | {{item.body}}

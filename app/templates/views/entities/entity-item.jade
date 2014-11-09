@@ -1,0 +1,13 @@
+md-card()
+  .type
+    a(ng-href="/content?type={{item.type}}") {{item.type}}
+  a(ng-href="entity/{{item._id}}")
+    img(ng-src="{{item.image.url}}", alt="{{item.title}}", width="100%")
+  h2
+    a(ng-href="entity/{{item._id}}") {{item.title}}
+  p
+    | {{item.summary}}
+  .tags
+    .tag(ng-repeat="tag in item.tags track by $index")
+      a(ng-href="/content?tags={{tag}}") {{tag}}
+      span(ng-if="!$last") ,&nbsp;

@@ -1,0 +1,114 @@
+{
+  "site": {
+    "name":"",
+    "title":"",
+    "environment":"prod",
+    "version":"0.1.0",
+    "Description":"",
+    "protocol":"http://",
+    "baseUrl":"theorbweavers.com",
+    "indexItemLimit": 9,
+    "clientId": "towUserId",
+    "contact":{
+      "facebook":"https://www.facebook.com/theorbweavers",
+      "twitter":"https://www.twitter.com/theorbweavers",
+      "soundcloud":"https://www.soundcloud.com/theorbweavers",
+      "email":"info@theorbweavers.com",
+      "instagram":"https://www.instagram.com/theorbweavers",
+      "sms":"",
+      "phone":"",
+      "newsletter":""
+    },
+    "socialmedia":{
+      "sharing":{
+        "services":[
+          {
+            "id":"facebook",
+            "templateUrl": "views/directives/share-item-facebook.html"
+          },
+          {
+            "id":"twitter",
+            "templateUrl": "views/directives/share-item-twitter.html"
+          },
+          {
+            "id":"email",
+            "templateUrl": "views/directives/share-item-email.html"
+          }
+        ]
+      }
+    },
+    "date":{
+      "formats":{
+        "indexItem":"ddd D MMM, YYYY",
+        "short":"D MMM YYYY",
+        "medium":"ddd D MMM, h:mm a",
+        "long":"ddd D MMM YYYY, h:mm a",
+        "upcoming":"dddd D MMMM, h:mm a"
+      }
+    },
+    "navigation":[
+      {"title":"Home","path":"/home"},
+      {"title":"Content","path":"/content"}
+    ],
+    "applicationRoutes":[
+      {
+        "path": "/",
+        "options":{
+          "templateUrl": "views/main.html",
+          "rootTitle": "Home"
+        }
+      },
+      {
+        "path": "/about",
+        "options":{
+          "templateUrl": "views/about.html",
+          "rootTitle": "About"
+        }
+      },
+      {
+        "path": "/search",
+        "options":{
+          "templateUrl": "views/main.html",
+          "controller": "MainCtrl"
+        }
+      },
+      {
+        "path": "/content",
+        "options":{
+          "templateUrl": "views/content-index.html"
+        }
+      },
+      {
+        "path": "/:path*",
+        "options":{
+          "templateUrl": "views/directives/tow-entity.html",
+          "controller": "TowEntityCtrl"
+        }
+      }
+    ],
+    "filters":{
+      "programs":{
+        "items":[
+          {
+            "title":"All",
+            "id":"all",
+            "path":"",
+            "reset":true,
+            "query":{
+              "type": "program"
+            }
+          }
+        ]
+      }
+    },
+    "apis":{
+      "content":{
+        "base":"/data/api/v1/",
+        "apiLocation":"/api/v1/",
+        "endpoints":{
+          "content":"content/:id"
+        }
+      }
+    }
+  }
+}

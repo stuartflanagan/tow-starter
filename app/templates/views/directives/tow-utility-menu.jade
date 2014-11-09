@@ -1,0 +1,7 @@
+md-bottom-sheet.grid
+  md-list
+    md-item(ng-repeat='item in items', ng-click='listItemClick($index)')
+      .md-item-content
+        .md-icon-container
+          md-inline-grid-icon(icon='{{item.icon}}')
+        p.md-grid-text  {{ item.name }} 
