@@ -21,7 +21,7 @@ angular.module('towApp')
       $scope.path = "views/404.html"
       @
 
-    serviceEndpoint = "#{appConfiguration.site.apis.content.base}#{appConfiguration.site.apis.content.endpoints.content}"
+    # serviceEndpoint = "#{appConfiguration.site.apis.content.base}#{appConfiguration.site.apis.content.endpoints.content}"
     
     $scope.isLoading = true
     id = $routeParams.path
@@ -29,11 +29,11 @@ angular.module('towApp')
     #  resourceSuccess entity
     #else
 
-    console.log "id", id
     # {path:id}
-
-    entityResource = new towEntityResource("#{appConfiguration.site.apis.content.base}#{appConfiguration.site.apis.content.endpoints.content}")
-    entity = entityResource.get({path:"#{$routeParams.path}"})
+    # issue with ng removing forward slashes
+    #serviceEndpoint = "#{appConfiguration.site.apis.content.base}#{appConfiguration.site.apis.content.endpoints.content}"
+    entityResource = new towEntityResource("#{appConfiguration.site.apis.content.base}#{$routeParams.path}")
+    entity = entityResource.get()
 
     #entityResource = new towEntityResource("#{appConfiguration.site.apis.content.base}#{$routeParams.path}")
     #entity = entityResource.get()
