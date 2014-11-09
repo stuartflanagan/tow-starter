@@ -481,6 +481,22 @@ module.exports = function (grunt) {
       }
       }
     },
+    mongoimport: {
+      options: {
+        db : 'api',
+        stopOnError : false,  //optional
+        collections : [
+          { 
+            name : 'entity', 
+            type : 'json', 
+            file : './api/data/entity.json', 
+            jsonArray : true,  //optional
+            upsert : true,  //optional
+            drop : true  //optional
+          }
+        ]
+      }
+    },
     shell: {
       data: {
         command: 'mkdir -p data/db',
@@ -541,6 +557,7 @@ module.exports = function (grunt) {
       'html2js:main',
       'concurrent:server',
       'autoprefixer',
+      'mongoimport',
       'connect:livereload',
       'express',
       'watch'
