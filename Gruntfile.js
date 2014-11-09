@@ -499,10 +499,10 @@ module.exports = function (grunt) {
     },
     shell: {
       data: {
-        command: 'mkdir -p data/db',
+        command: 'mkdir -p .data/db',
       },
       mongodb: {
-        command: 'mongod --port 27017 --bind_ip 127.0.0.1 --dbpath ./data/db',
+        command: 'mongod --port 27017 --bind_ip 127.0.0.1 --dbpath ./.data/db',
         options: {
             async: true,
             stdout: true,
